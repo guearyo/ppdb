@@ -49,10 +49,7 @@
     .site-header { position: sticky; top: 0; z-index: 10; background: rgb(255 255 255 / 95%); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
     .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
     .brand { display: flex; align-items: center; gap: 12px; }
-    .brand-mark {
-      width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid #d7c16e;
-      border-radius: 50%; background: #f8f4df; color: var(--deep); font: 700 18px Georgia, serif;
-    }
+    .brand-logo { width: 48px; height: 48px; flex: 0 0 auto; object-fit: contain; }
     .brand strong { display: block; color: var(--deep); font-size: 13px; line-height: 1.25; letter-spacing: .025em; }
     .brand small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; }
     .navlinks { display: flex; align-items: center; gap: 27px; font-size: 12px; font-weight: 700; }
@@ -82,20 +79,8 @@
     .hero-copy { max-width: 520px; margin-bottom: 25px; color: #53675f; font-size: 15px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
     .hero-note { margin: 17px 0 0; color: var(--muted); font-size: 11px; }
-    .hero-card {
-      position: relative; min-height: 360px; overflow: hidden; padding: 30px; border: 1px solid #e8e3cd;
-      border-radius: 18px; background: linear-gradient(150deg, #0d6857, #063d36 72%); color: #fff; box-shadow: var(--shadow);
-    }
-    .hero-card::before, .hero-card::after { position: absolute; border: 1px solid rgb(255 255 255 / 14%); border-radius: 50%; content: ""; }
-    .hero-card::before { top: -85px; right: -60px; width: 300px; height: 300px; box-shadow: 0 0 0 24px rgb(255 255 255 / 4%), 0 0 0 50px rgb(255 255 255 / 3%); }
-    .hero-card::after { bottom: -190px; left: -90px; width: 300px; height: 300px; }
-    .hero-card-content { position: relative; z-index: 1; display: flex; min-height: 298px; flex-direction: column; justify-content: space-between; }
-    .seal { width: 53px; height: 53px; display: grid; place-items: center; border: 1px solid rgb(241 212 126 / 65%); border-radius: 50%; color: #f1d47e; font: 700 22px Georgia, serif; }
-    .hero-card-label { margin: 25px 0 7px; color: #f1d47e; font-size: 10px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
-    .hero-card h2 { max-width: 380px; margin-bottom: 12px; font: 600 clamp(26px, 3.5vw, 38px)/1.12 Georgia, serif; }
-    .hero-card p { max-width: 340px; margin-bottom: 22px; color: #dceae3; font-size: 12px; }
-    .hero-card-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #e5eee8; font-size: 10px; }
-    .hero-card-bottom strong { color: #f1d47e; font-size: 12px; }
+    .flyer-frame { margin: 0; padding: 8px; border: 1px solid #e5e6d8; border-radius: 14px; background: #fff; box-shadow: var(--shadow); }
+    .flyer-frame img { display: block; width: auto; max-width: 100%; max-height: 540px; height: auto; margin-inline: auto; border-radius: 8px; object-fit: contain; }
     .section { padding: 74px 0; }
     .section-white { background: #fff; }
     .section-head { max-width: 690px; margin-bottom: 31px; }
@@ -156,8 +141,7 @@
     :focus-visible { outline: 3px solid #d8b85f; outline-offset: 3px; }
     @media (max-width: 850px) {
       .hero-grid { grid-template-columns: 1fr .85fr; gap: 28px; }
-      .hero-card { min-height: 330px; padding: 23px; }
-      .hero-card-content { min-height: 282px; }
+      .flyer-frame { width: min(100%, 430px); margin-inline: auto; }
       .form-layout { grid-template-columns: 1fr; gap: 20px; }
       .form-intro { position: static; max-width: 680px; }
       .info-grid { grid-template-columns: 1fr 1fr; }
@@ -169,7 +153,7 @@
       .pause-button { font-size: 0; }
       .pause-button::before { font-size: 11px; content: attr(data-label); }
       .nav { min-height: 68px; }
-      .brand-mark { width: 39px; height: 39px; font-size: 16px; }
+      .brand-logo { width: 42px; height: 42px; }
       .brand { gap: 8px; }
       .brand strong { font-size: 11px; }
       .brand small { font-size: 9px; }
@@ -180,8 +164,7 @@
       .hero-grid { grid-template-columns: 1fr; gap: 28px; }
       h1 { font-size: clamp(43px, 12vw, 58px); }
       .hero-copy { font-size: 13px; }
-      .hero-card { min-height: 300px; }
-      .hero-card-content { min-height: 248px; }
+      .flyer-frame { width: min(100%, 400px); }
       .section { padding: 53px 0; }
       .info-grid { grid-template-columns: 1fr; }
       .info-card:last-child { grid-column: auto; }
@@ -214,7 +197,7 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="#beranda" aria-label="Pondok Pesantren Daarul Azmi, ke beranda">
-        <span class="brand-mark" aria-hidden="true">DA</span>
+        <img class="brand-logo" src="assets/logo-daarul-azmi.png" alt="">
         <span><strong>PONDOK PESANTREN<br>DAARUL AZMI</strong><small>Penerimaan Santri Baru 2027/2028</small></span>
       </a>
       <nav class="navlinks" aria-label="Navigasi utama">
@@ -237,17 +220,9 @@
           </div>
           <p class="hero-note">Permohonan akan ditinjau panitia sebelum akun dibuat.</p>
         </div>
-        <aside class="hero-card" aria-label="Informasi PPDB Daarul Azmi 2027/2028">
-          <div class="hero-card-content">
-            <div class="seal" aria-hidden="true">DA</div>
-            <div>
-              <div class="hero-card-label">Penerimaan santri baru</div>
-              <h2>Tumbuh dalam ilmu, melangkah dengan akhlak.</h2>
-              <p>Mulai dari permohonan akun PPDB. Panitia akan menghubungi wali untuk informasi berikutnya.</p>
-            </div>
-            <div class="hero-card-bottom"><span>Tahun ajaran</span><strong>2027 / 2028</strong></div>
-          </div>
-        </aside>
+        <figure class="flyer-frame">
+          <img src="assets/ppdb-flyer-2027.webp" alt="Flyer Penerimaan Santri Baru Pondok Pesantren Daarul Azmi Tahun Ajaran 2027/2028, berisi foto santri dan informasi pendaftaran">
+        </figure>
       </div>
     </section>
 
