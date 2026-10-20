@@ -49,10 +49,7 @@
     .site-header { position: sticky; top: 0; z-index: 10; background: rgb(255 255 255 / 95%); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
     .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
     .brand { display: flex; align-items: center; gap: 12px; }
-    .brand-mark {
-      width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid #d7c16e;
-      border-radius: 50%; background: #f8f4df; color: var(--deep); font: 700 18px Georgia, serif;
-    }
+    .brand-logo { width: 48px; height: 48px; flex: 0 0 auto; object-fit: contain; }
     .brand strong { display: block; color: var(--deep); font-size: 13px; line-height: 1.25; letter-spacing: .025em; }
     .brand small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; }
     .navlinks { display: flex; align-items: center; gap: 27px; font-size: 12px; font-weight: 700; }
@@ -169,7 +166,7 @@
       .pause-button { font-size: 0; }
       .pause-button::before { font-size: 11px; content: attr(data-label); }
       .nav { min-height: 68px; }
-      .brand-mark { width: 39px; height: 39px; font-size: 16px; }
+      .brand-logo { width: 42px; height: 42px; }
       .brand { gap: 8px; }
       .brand strong { font-size: 11px; }
       .brand small { font-size: 9px; }
@@ -214,7 +211,7 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="#beranda" aria-label="Pondok Pesantren Daarul Azmi, ke beranda">
-        <span class="brand-mark" aria-hidden="true">DA</span>
+        <img class="brand-logo" src="assets/logo-daarul-azmi.png" alt="">
         <span><strong>PONDOK PESANTREN<br>DAARUL AZMI</strong><small>Penerimaan Santri Baru 2027/2028</small></span>
       </a>
       <nav class="navlinks" aria-label="Navigasi utama">
